@@ -1,0 +1,47 @@
+#! /bin/bash
+
+langType=$1
+
+if [ $langType = "C" ];then
+    #echo "C lang"
+    res="$(gcc Solution.c)"
+    if [ -n "$(ls | grep a.out)" ];then
+	res="$(./a.out &> temp.txt)"
+	cat temp.txt
+	#echo $res
+	rm a.out
+    else
+	echo $res
+    fi
+elif [ $langType = "C++" ];then
+    #echo "C++ lang"
+    res="$(g++ Solution.cpp)"
+    if [ -n "$(ls | grep a.out)" ];then
+	#res="$(./a.out 2>&1)"
+	res="$(./a.out &> temp.txt)"
+	#echo $res
+	cat temp.txt
+	rm a.out
+    else
+        echo $res
+    fi
+elif [ $langType = "Java" ];then
+    #echo "Java lang"
+    res="$(javac Solution.java)"
+    if [ -n "$(ls | grep Solution.class)" ];then
+        res="$(java Solution > temp.txt)"
+        #echo $res
+	cat temp.txt
+	rm Solution.class
+    else
+        echo $res
+    fi
+elif [ $langType = "Python2.7" ];then
+    #echo "Python lang"
+    res="$(python2.7 Solution.py > temp.txt)"
+    #echo $res
+    cat temp.txt
+
+else
+    echo "Unknown lang"
+fi

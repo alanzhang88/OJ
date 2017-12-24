@@ -1,0 +1,36 @@
+#editor{
+  position: absolute;
+  height: 90%;
+  width: 50%;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 2px;
+}
+.MyCursorClass {
+  position: absolute;
+  border-left: 2px solid gold;
+}
+#result{
+  position: absolute;
+  height: 90%;
+  width: 48%;
+  top: 50px;
+  right: 2px;
+  bottom: 0px;
+  left: 51%;
+  font-size: 18px;
+  border-width: 2px
+}
+#editorSub{
+  position: absolute;
+  top: 20px;
+}
+#langType{
+  position: absolute;
+  top: 20px;
+  left: 30%;
+}
+body{
+  background: white;
+}
